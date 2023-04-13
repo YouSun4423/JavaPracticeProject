@@ -7,8 +7,8 @@ public class App {
         Scanner stdln = new Scanner(System.in);
         System.out.println("半径:");
         double r = stdln.nextDouble();
-        System.out.println("円周の長さは"+2*PI*r+"です");
-        System.out.println("円の面積は"+PI*r*r+"です");
+        System.out.println("円周の長さは"+2*PI*r+"です!");
+        System.out.println("円の面積は"+PI*r*r+"です!");
     }
 }
 
