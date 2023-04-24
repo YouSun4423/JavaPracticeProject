@@ -24,46 +24,25 @@ public class App {
 
 class Calculate {
     void sort(int num1, int num2){
-
         int temp;
         if (num1 < num2) {
             temp = num1;
             num1 = num2;
             num2 = temp;
         }
-
         System.out.println("降順にソートした結果は " + num1 + ", " + num2 + " です。");
     }
 }
 
 class SeasonChecker {
-    
-    /**
-     * 与えられた月に対応する季節を判定する
-     *
-     * @param month 月（1~12）
-     * @return 季節の文字列
-     **/
     String checkSeason(int month){
-        switch (month) {
-            case 12:
-            case 1:
-            case 2:
-                return "冬";
-            case 3:
-            case 4:
-            case 5:
-                return "春";
-            case 6:
-            case 7:
-            case 8:
-                return "夏";
-            case 9:
-            case 10:
-            case 11:
-                return "秋";
-            default:
-                return null;
-        }
+        String season =  switch (month) {
+            case 12, 1, 2 -> {yield "冬";}
+            case 3, 4, 5 -> {yield "春";}
+            case 6, 7, 8 -> {yield "夏";}
+            case 9, 10, 11 -> {yield "秋";}
+            default -> {yield null;}
+        };
+        return season;
     }
 }
