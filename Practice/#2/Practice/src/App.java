@@ -3,32 +3,32 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        Calculate cal = new Calculate();
+        Sort sort = new Sort();
 
-        System.out.print("整数値1を入力してください: ");
+        System.out.print("1つ目の整数値を入力してください: ");
         int num1 = scanner.nextInt();
-        System.out.print("整数値2を入力してください: ");
+        System.out.print("2つ目の整数値を入力してください: ");
         int num2 = scanner.nextInt();
-        cal.sort(num1, num2);
+        sort.descending(num1, num2);
 
         SeasonChecker sc = new SeasonChecker();
         System.out.print("月を入力してください（1~12）: ");
         String season = sc.checkSeason(scanner.nextInt());
-        if (season == null) {
+        if(season == null){
             throw new NullPointerException("季節が特定できません。");
-        } else {
+        }else{
             System.out.println(season + "です。");
         }
     }
 }
 
-class Calculate {
-    void sort(int num1, int num2){
-        int temp;
-        if (num1 < num2) {
-            temp = num1;
+class Sort {
+    void descending(int num1, int num2){
+        int tmp;
+        if(num1 < num2){
+            tmp = num1;
             num1 = num2;
-            num2 = temp;
+            num2 = tmp;
         }
         System.out.println("降順にソートした結果は " + num1 + ", " + num2 + " です。");
     }
